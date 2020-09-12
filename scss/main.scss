@@ -1,0 +1,154 @@
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+}
+
+body {
+    font-family: 'NanumBarunGothic', sans-serif;
+    height: 100vh;
+}
+
+.wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    height: 91px;
+    padding: 18px 0;
+    z-index: 3;
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    .wrap {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 2fr;
+    }   
+    .menu__small {
+        display: flex;
+        font-size: 13px;
+        margin-bottom: 13px;
+        color: rgb(138, 138, 138);
+        li:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+    .menu__large {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .menu__icon {
+            height: 36px;
+            display: flex;
+            a {
+                width: 36px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            .btn-open-sitemap {
+                background-image: url("../img/ico-sitemap-white.png");
+            }
+            .btn-search {
+                background-image: url("../img/ico-search-white.png");
+            }
+            .btn-schedule {
+                background-image: url("../img/ico-schedule-white.png");
+            }
+            .btn-mymega {
+                background-image: url("../img/ico-mymega-white.png");
+            }
+        }
+        .menu__main {
+            width: 65%;
+            font-size: 18px;
+            ul {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+    .logo {
+        background-image: url("../img/logo-white.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .menu-right {
+        .menu__small {
+            justify-content: flex-end;
+        }
+        .menu__icon {
+            order: 1;
+        }
+    }
+}
+
+.main-movie {
+    position: relative;
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    .bg {
+        z-index: -1;
+        position: absolute;
+        min-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(85,63,5,1) 0%, rgba(23,17,1,0) 50%, rgba(85,63,5,1) 100%);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(3,1,21,0.7);
+        }
+        .bg-pattern {
+            content: '';
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("https://www.megabox.co.kr/static/pc/images/movie/bg-movie-detail-pattern.png") repeat 0 0;
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
+            filter: blur(15px);
+        }
+    }
+    .wrap {
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        margin-top: 180px;
+        font-size: 16px;
+        .boxoffice {
+
+        }
+    }
+}
