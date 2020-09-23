@@ -33,7 +33,7 @@ body {
     display: flex;
     font-size: 13px;
     margin-bottom: 13px;
-    color: #8a8a8a; }
+    color: #919191; }
     .header .menu__small li:not(:last-child) {
       margin-right: 20px; }
   .header .menu__large {
@@ -62,26 +62,28 @@ body {
         display: flex;
         justify-content: space-around; }
   .header .logo {
-    background-image: url("../img/logo-white.png");
-    background-repeat: no-repeat;
-    background-position: center center; }
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .header .menu-right .menu__small {
     justify-content: flex-end; }
   .header .menu-right .menu__icon {
     order: 1; }
 
-.main-movie {
+main {
+  letter-spacing: -0.5px; }
+
+.boxoffice {
   position: relative;
-  width: 100%;
   color: white;
-  overflow: hidden; }
-  .main-movie .bg {
+  overflow: hidden;
+  margin-bottom: 50px; }
+  .boxoffice .bg {
     z-index: -1;
     position: absolute;
-    min-width: 1100px;
     width: 100%;
     margin: 0 auto; }
-    .main-movie .bg::before {
+    .boxoffice .bg::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -89,7 +91,7 @@ body {
       top: 0;
       left: 0;
       background: linear-gradient(to right, #553f05 0%, rgba(23, 17, 1, 0) 50%, #553f05 100%); }
-    .main-movie .bg::after {
+    .boxoffice .bg::after {
       content: '';
       position: absolute;
       width: 100%;
@@ -99,7 +101,7 @@ body {
       right: 0;
       bottom: 0;
       background-color: rgba(3, 1, 21, 0.7); }
-    .main-movie .bg .bg-pattern {
+    .boxoffice .bg-pattern {
       content: '';
       z-index: 1;
       position: absolute;
@@ -108,13 +110,346 @@ body {
       width: 100%;
       height: 100%;
       background: url("https://www.megabox.co.kr/static/pc/images/movie/bg-movie-detail-pattern.png") repeat 0 0; }
-    .main-movie .bg img {
+    .boxoffice .bg img {
       width: 100%;
       object-fit: cover;
       filter: blur(15px); }
-  .main-movie .wrap {
-    height: 50vh;
+
+.contents {
+  width: 100%;
+  margin-top: 170px;
+  font-size: 16px; }
+
+.content__title {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; }
+  .content__title h3 {
+    padding-bottom: 7px;
+    border-bottom: 1px solid #aaa; }
+
+.content__title .more-movie {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  color: #aaa;
+  font-size: 15px; }
+  .content__title .more-movie span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    background-position: center center;
+    margin-left: 10px; }
+  .content__title .more-movie span {
+    background-image: url("../img/ico-more-cross-gray.png"); }
+
+.movie-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 50px; }
+  .movie-list .movie:not(:last-child) {
+    margin-right: 20px; }
+  .movie-list .back {
+    display: none; }
+  .movie-list .btn-util {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;
+    margin-top: 10px; }
+  .movie-list .like {
+    cursor: pointer;
     display: flex;
     justify-content: center;
-    margin-top: 180px;
-    font-size: 16px; }
+    align-items: center;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #555;
+    border-radius: 5px; }
+    .movie-list .like .like__heart {
+      width: 17px;
+      height: 15px;
+      background-image: url("../img/ico-heart-toggle-main.png");
+      margin-right: 5px; }
+    .movie-list .like .like__count {
+      font-size: 13px;
+      color: white; }
+  .movie-list .ticketing {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #107b96;
+    font-size: 15px;
+    color: white; }
+
+.movie__info .front {
+  position: relative; }
+  .movie__info .front .rank {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    font-size: 30px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    background: url("../img/bg-main-movie-rank.png") no-repeat 0 0; }
+  .movie__info .front img {
+    width: 245px;
+    height: 352px;
+    border-radius: 5px; }
+
+.link-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 25px 0;
+  margin-bottom: 50px;
+  justify-items: center;
+  font-size: 15px; }
+  .link-menu > div,
+  .link-menu a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .link-menu > div:not(:last-child),
+    .link-menu a:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, 0.2); }
+  .link-menu a span {
+    margin-right: 10px;
+    display: inline-block; }
+  .link-menu .link__search {
+    position: relative; }
+    .link-menu .link__search input {
+      width: 200px;
+      padding: 0 10px 5px 10px;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      background: none;
+      font-size: 15px;
+      color: white; }
+      .link-menu .link__search input:focus {
+        outline: none; }
+    .link-menu .link__search button {
+      position: absolute;
+      right: 35px;
+      top: 0;
+      outline: none;
+      border: none;
+      background: transparent;
+      cursor: pointer; }
+      .link-menu .link__search button span {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-image: url("../img/ico-search-white.png"); }
+  .link-menu .link__schedule span {
+    width: 24px;
+    height: 26px;
+    background-image: url("../img/ico-schedule-main.png"); }
+  .link-menu .link__boxoffice span {
+    width: 26px;
+    height: 24px;
+    background-image: url("../img/ico-boxoffice-main.png"); }
+  .link-menu .link__ticketing span {
+    width: 29px;
+    height: 25px;
+    background-image: url("../img/ico-quick-reserve-main.png"); }
+
+.moving-mouse {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  animation: moveMouse 2s infinite; }
+
+.benefit {
+  position: relative;
+  overflow: hidden;
+  min-height: 780px; }
+  .benefit::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 465px;
+    bottom: 0;
+    background-color: #503396; }
+
+.benefit__title {
+  display: flex;
+  justify-content: space-between; }
+  .benefit__title h4 {
+    font-size: 30px;
+    color: #351f66; }
+  .benefit__title .more-benefit {
+    color: #aaa;
+    font-size: 15px; }
+    .benefit__title .more-benefit span {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-size: cover;
+      background-position: center center;
+      margin-left: 10px; }
+    .benefit__title .more-benefit span {
+      background-image: url("../img/btn-more-cross-purple.png"); }
+
+.benefit__contents {
+  position: relative;
+  height: 325px; }
+
+.benefit__contents .slide {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  .benefit__contents .slide .slide-item {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    height: 100%; }
+  .benefit__contents .slide .slide__txt {
+    height: 230px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s cubic-bezier(0.14, 0.17, 0.39, 0.81); }
+  .benefit__contents .slide .slide__bg {
+    overflow: hidden;
+    width: 400px;
+    height: 100%;
+    opacity: 0;
+    transform: translate(100px);
+    transition: all 0.5s cubic-bezier(0.14, 0.17, 0.39, 0.81); }
+  .benefit__contents .slide .showing {
+    z-index: 1;
+    display: flex; }
+    .benefit__contents .slide .showing .slide__txt {
+      transform: translateY(0);
+      opacity: 1; }
+    .benefit__contents .slide .showing .slide__bg {
+      transform: translate(0);
+      opacity: 1; }
+
+.benefit__contents .slide-control {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 42px;
+  display: flex;
+  align-items: center; }
+  .benefit__contents .slide-control .control-wrap {
+    width: 190px;
+    height: 2px;
+    background-color: #ebebeb;
+    margin-right: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); }
+    .benefit__contents .slide-control .control-wrap .on {
+      background-color: #503396; }
+  .benefit__contents .slide-control .control-util button {
+    height: 12px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center; }
+  .benefit__contents .slide-control .control-util .btn-prev {
+    width: 7px;
+    background-image: url(../img/btn-benefit-slider-prev.png); }
+  .benefit__contents .slide-control .control-util .btn-next {
+    width: 7px;
+    background-image: url(../img/btn-benefit-slider-next.png); }
+  .benefit__contents .slide-control .control-util .btn-pause {
+    width: 6px;
+    background-image: url(../img/btn-benefit-slider-pause.png); }
+  .benefit__contents .slide-control .control-util .btn-play {
+    display: none;
+    width: 6px;
+    background-image: url(../img/btn-benefit-slider-play.png); }
+  .benefit__contents .slide-control .control-util .on {
+    display: inline-block; }
+  .benefit__contents .slide-control .slide-count {
+    margin-top: 2px;
+    margin-left: 8px;
+    font-size: 15px; }
+
+.benefit__contents .ad {
+  width: 100%; }
+  .benefit__contents .ad .banner {
+    display: flex; }
+  .benefit__contents .ad .banner a {
+    width: 441px;
+    height: 204px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2); }
+    .benefit__contents .ad .banner a:last-child {
+      width: 204px;
+      margin-left: 20px; }
+    .benefit__contents .ad .banner a img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px; }
+  .benefit__contents .ad .ad-img {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 415px;
+    height: 530px; }
+    .benefit__contents .ad .ad-img img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px; }
+
+.benefit__contents .menu-link {
+  padding: 50px 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .benefit__contents .menu-link .link a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    color: white; }
+    .benefit__contents .menu-link .link a img {
+      margin-bottom: 20px; }
+
+.curation {
+  background-color: #252451;
+  padding-top: 50px;
+  height: 100vh; }
+  .curation .curation__title {
+    display: flex;
+    justify-content: space-between; }
+    .curation .curation__title h4 {
+      font-size: 30px;
+      color: #351f66;
+      color: white; }
+    .curation .curation__title .more-curation {
+      color: #aaa;
+      font-size: 15px;
+      display: flex;
+      align-items: center; }
+      .curation .curation__title .more-curation span {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-size: cover;
+        background-position: center center;
+        margin-left: 10px; }
+      .curation .curation__title .more-curation span {
+        background-image: url("../img/ico-more-cross-gray.png");
+        margin-bottom: 3px; }
+
+@keyframes moveMouse {
+  0% {
+    transform: translateY(0px); }
+  70% {
+    transform: translateY(-10px); }
+  100% {
+    transform: translateY(0px); } }

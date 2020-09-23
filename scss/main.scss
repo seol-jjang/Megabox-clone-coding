@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
+@import "common/mixins";
 
 * {
     box-sizing: border-box;
@@ -40,7 +41,7 @@ body {
         display: flex;
         font-size: 13px;
         margin-bottom: 13px;
-        color: rgb(138, 138, 138);
+        color: rgb(145, 145, 145);
         li:not(:last-child) {
             margin-right: 20px;
         }
@@ -80,9 +81,9 @@ body {
         }
     }
     .logo {
-        background-image: url("../img/logo-white.png");
-        background-repeat: no-repeat;
-        background-position: center center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .menu-right {
         .menu__small {
@@ -94,15 +95,18 @@ body {
     }
 }
 
-.main-movie {
+main {
+    letter-spacing: -0.5px;
+}
+
+.boxoffice {
     position: relative;
-    width: 100%;
     color: white;
     overflow: hidden;
+    margin-bottom: 50px;
     .bg {
         z-index: -1;
         position: absolute;
-        min-width: 1100px;
         width: 100%;
         margin: 0 auto;
         &::before {
@@ -125,7 +129,7 @@ body {
             bottom: 0;
             background-color: rgba(3,1,21,0.7);
         }
-        .bg-pattern {
+        &-pattern {
             content: '';
             z-index: 1;
             position: absolute;
@@ -141,14 +145,368 @@ body {
             filter: blur(15px);
         }
     }
-    .wrap {
-        height: 50vh;
-        display: flex;
-        justify-content: center;
-        margin-top: 180px;
-        font-size: 16px;
-        .boxoffice {
+}
+.contents {
+    width: 100%;
+    margin-top: 170px;
+    font-size: 16px;
+}
+.content__title {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    h3 {
+        padding-bottom: 7px;
+        border-bottom: 1px solid #aaa;
+    }
+}
+.content__title .more-movie {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    @include plus-btn;
+    span {
+        background-image: url("../img/ico-more-cross-gray.png");
+    }
+}
+.movie-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    .movie:not(:last-child) {
+        margin-right: 20px;
+    }
+    .back {
+        display: none;
+    }
+    .btn-util {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    .like {
+        @include like-btn;
+    }
+    .ticketing {
+        @include ticketing-btn;
+    }
+}
+.movie__info .front {
+    position: relative;
+    .rank {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        font-size: 30px;
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+        background: url("../img/bg-main-movie-rank.png") no-repeat 0 0;
+    }
+    img {
+        width: 245px;
+        height: 352px;
+        border-radius: 5px;
+    }
+}
 
+.link-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: rgba(0,0,0,0.3);
+    padding: 25px 0;
+    margin-bottom: 50px;
+    justify-items: center;
+    font-size: 15px;
+    & > div,
+    a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:not(:last-child) {
+            border-right: 1px solid rgba(255,255,255,0.2);
         }
+    }
+    a span {
+        margin-right: 10px;
+        display: inline-block;
+    }
+    .link__search {
+        position: relative;
+        input {
+            width: 200px;
+            padding: 0 10px 5px 10px;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            background: none;
+            font-size: 15px;
+            color: white;
+            &:focus {
+                outline: none;
+            }
+        }
+        button {
+            position: absolute;
+            right: 35px;
+            top: 0;
+            outline: none;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            span {
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                background-image: url("../img/ico-search-white.png");
+            }
+        }
+    }
+    .link__schedule {
+        span {
+            width: 24px;
+            height: 26px;
+            background-image: url("../img/ico-schedule-main.png");
+        }
+    }
+    .link__boxoffice {
+        span {
+            width: 26px;
+            height: 24px;
+            background-image: url("../img/ico-boxoffice-main.png");
+        }
+    }
+    .link__ticketing {
+        span {
+            width: 29px;
+            height: 25px;
+            background-image: url("../img/ico-quick-reserve-main.png");
+        }
+    }
+}
+
+.moving-mouse {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    animation: moveMouse 2s infinite;
+}
+
+.benefit {
+    position: relative;
+    overflow: hidden;
+    min-height: 780px;
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        top: 465px;
+        bottom: 0;
+        background-color: #503396;
+    }
+}
+.benefit__title {
+    display: flex;
+    justify-content: space-between;
+    h4 {
+        @include contents-title;
+    }
+    .more-benefit {
+        @include plus-btn;
+        span {
+            background-image: url("../img/btn-more-cross-purple.png");
+        }
+    }
+}
+.benefit__contents {
+    position: relative;
+    height: 325px;
+}
+
+.benefit__contents .slide {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .slide-item {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        height: 100%;
+    }
+    .slide__txt {
+        height: 230px;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 0.5s cubic-bezier(0.14, 0.17, 0.39, 0.81);
+    }
+    .slide__bg {
+        overflow: hidden;
+        width: 400px;
+        height: 100%;
+        opacity: 0;
+        transform: translate(100px);
+        transition: all 0.5s cubic-bezier(0.14, 0.17, 0.39, 0.81);
+    }
+    .showing {
+        z-index: 1;
+        display: flex;
+        .slide__txt {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .slide__bg {
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+}
+.benefit__contents .slide-control {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    bottom: 42px;
+    display: flex;
+    align-items: center;
+    .control-wrap {
+        width: 190px;
+        height: 2px;
+        background-color: #ebebeb;
+        margin-right: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        .on {
+            background-color: #503396;
+        }
+    }
+    .control-util {
+        button {
+            height: 12px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .btn-prev {
+            width: 7px;
+            background-image: url(../img/btn-benefit-slider-prev.png);
+        }
+        .btn-next {
+            width: 7px;
+            background-image: url(../img/btn-benefit-slider-next.png);
+        }
+        .btn-pause {
+            width: 6px;
+            background-image: url(../img/btn-benefit-slider-pause.png);
+        }
+        .btn-play {
+            display: none;
+            width: 6px;
+            background-image: url(../img/btn-benefit-slider-play.png);
+        }
+        .on {
+            display: inline-block;
+        }
+    }
+    .slide-count {
+        margin-top: 2px;
+        margin-left: 8px;
+        font-size: 15px;
+    }
+}
+.benefit__contents .ad {
+    width: 100%;
+    .banner {
+        display: flex;
+    }
+    .banner a {
+        width: 441px;
+        height: 204px;
+        box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2);
+        &:last-child {
+            width: 204px;
+            margin-left: 20px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+    }
+    .ad-img {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 415px;
+        height: 530px;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+    }
+}
+.benefit__contents .menu-link {
+    padding: 50px 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .link {
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 16px;
+            color: white;
+            img {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.curation {
+    background-color: #252451;
+    padding-top: 50px;
+    height: 100vh;
+    .curation__title {
+        display: flex;
+        justify-content: space-between;
+        h4 {
+            @include contents-title;
+            color: white;
+        }
+        .more-curation {
+            @include plus-btn;
+            display: flex;
+            align-items: center;
+            span {
+                background-image: url("../img/ico-more-cross-gray.png");
+                margin-bottom: 3px;
+            }
+        }
+    }
+}
+
+
+
+@keyframes moveMouse {
+    0% {
+        transform: translateY(0px);
+    }
+    70% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
     }
 }
