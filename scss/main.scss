@@ -24,6 +24,10 @@ body {
     margin: 0 auto;
 }
 
+.body-wrap {
+    position: relative;
+}
+
 .header {
     position: absolute;
     width: 100%;
@@ -33,7 +37,7 @@ body {
     color: white;
     background-color: rgba(0,0,0,0.3);
     border-bottom: 1px solid rgba(255,255,255,.2);
-    .wrap {
+    .menu-wrap {
         display: grid;
         grid-template-columns: 2fr 1.5fr 2fr;
     }   
@@ -71,6 +75,9 @@ body {
                 background-image: url("../img/ico-mymega-white.png");
             }
         }
+        .on {
+            background-image: url("../img/btn-header-layer-close.png") !important;
+        }
         .menu__main {
             width: 65%;
             font-size: 18px;
@@ -93,6 +100,57 @@ body {
             order: 1;
         }
     }
+}
+
+.header .layer-sitemap {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 50px 0 70px;
+    top: 90px;
+    left: 0;
+    background-color: #333;
+    h4 {
+        text-transform: uppercase;
+        font-size: 22px;
+    }
+    .sitemap__list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        margin-top: 25px;
+        text-align: center;
+        ul {
+            li {
+                color: #bbb;
+                font-size: 15px;
+                &:first-child {
+                    color: white;
+                    font-size: 18px;
+                    padding: 15px 0;
+                    border-top: 1px solid rgba(68,68,68,.5);
+                    border-bottom: 1px solid rgba(68,68,68,.5);
+                    margin-bottom: 20px;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+            }
+            &:nth-child(5),
+            &:nth-child(6) {
+                grid-row-start: span 2;
+            }
+        }
+    }
+}
+.header .layer-header-search {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 50px 0;
+    top: 90px;
+    left: 0;
+    background-color: #351f67;
 }
 
 main {

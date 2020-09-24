@@ -17,6 +17,9 @@ body {
   width: 1100px;
   margin: 0 auto; }
 
+.body-wrap {
+  position: relative; }
+
 .header {
   position: absolute;
   width: 100%;
@@ -26,7 +29,7 @@ body {
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
-  .header .wrap {
+  .header .menu-wrap {
     display: grid;
     grid-template-columns: 2fr 1.5fr 2fr; }
   .header .menu__small {
@@ -55,6 +58,8 @@ body {
         background-image: url("../img/ico-schedule-white.png"); }
       .header .menu__large .menu__icon .btn-mymega {
         background-image: url("../img/ico-mymega-white.png"); }
+    .header .menu__large .on {
+      background-image: url("../img/btn-header-layer-close.png") !important; }
     .header .menu__large .menu__main {
       width: 65%;
       font-size: 18px; }
@@ -69,6 +74,47 @@ body {
     justify-content: flex-end; }
   .header .menu-right .menu__icon {
     order: 1; }
+
+.header .layer-sitemap {
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding: 50px 0 70px;
+  top: 90px;
+  left: 0;
+  background-color: #333; }
+  .header .layer-sitemap h4 {
+    text-transform: uppercase;
+    font-size: 22px; }
+  .header .layer-sitemap .sitemap__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 25px;
+    text-align: center; }
+    .header .layer-sitemap .sitemap__list ul li {
+      color: #bbb;
+      font-size: 15px; }
+      .header .layer-sitemap .sitemap__list ul li:first-child {
+        color: white;
+        font-size: 18px;
+        padding: 15px 0;
+        border-top: 1px solid rgba(68, 68, 68, 0.5);
+        border-bottom: 1px solid rgba(68, 68, 68, 0.5);
+        margin-bottom: 20px; }
+      .header .layer-sitemap .sitemap__list ul li:not(:last-child) {
+        margin-bottom: 15px; }
+    .header .layer-sitemap .sitemap__list ul:nth-child(5), .header .layer-sitemap .sitemap__list ul:nth-child(6) {
+      grid-row-start: span 2; }
+
+.header .layer-header-search {
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding: 50px 0;
+  top: 90px;
+  left: 0;
+  background-color: #351f67; }
 
 main {
   letter-spacing: -0.5px; }

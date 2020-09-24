@@ -9,17 +9,15 @@ function slide() {
         if (nextSlide) {
             currentSlide.style.display = "none";
             nextSlide.style.display = "flex";
-            const noneDisplay = setTimeout(() => {
+            setTimeout(() => {
                 nextSlide.classList.add(SHOWING_CLASS);
             }, 100);
-            noneDisplay();
         } else {
             currentSlide.style.display = "none";
             firstSlide.style.display = "flex";
-            const noneDisplay = setTimeout(() => {
+            setTimeout(() => {
                 firstSlide.classList.add(SHOWING_CLASS);
             }, 100);
-            noneDisplay();
         }
     } else {
         firstSlide.style.display = "flex";
