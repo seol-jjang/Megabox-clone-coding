@@ -425,7 +425,8 @@ main {
   height: 100vh; }
   .curation .curation__title {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-bottom: 40px; }
     .curation .curation__title h4 {
       font-size: 30px;
       color: #351f66;
@@ -445,6 +446,93 @@ main {
       .curation .curation__title .more-curation span {
         background-image: url("../img/ico-more-cross-gray.png");
         margin-bottom: 3px; }
+  .curation .curation-contents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    color: white; }
+    .curation .curation-contents .hero-movie {
+      grid-row-start: span 2;
+      padding-left: 20px; }
+    .curation .curation-contents .hero-info,
+    .curation .curation-contents .curation-list {
+      grid-column-start: span 2; }
+    .curation .curation-contents .bage {
+      position: absolute;
+      left: 0;
+      top: -10px;
+      width: 123px;
+      height: 135px;
+      text-indent: -9999px; }
+  .curation .curation-contents .hero-movie {
+    position: relative; }
+    .curation .curation-contents .hero-movie p {
+      background-image: url("../img/bg-bage-curation-classic.png");
+      background-repeat: no-repeat; }
+    .curation .curation-contents .hero-movie .hero__img img {
+      width: 88%;
+      border-radius: 20px; }
+    .curation .curation-contents .hero-movie .btn-util {
+      width: 88%;
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      font-size: 20px; }
+      .curation .curation-contents .hero-movie .btn-util a {
+        padding: 15px;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 5px;
+        text-align: center; }
+      .curation .curation-contents .hero-movie .btn-util .ticketing {
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background-color: #107b96;
+        font-size: 15px;
+        color: white;
+        font-size: 20px; }
+  .curation .curation-contents .hero-info {
+    line-height: 1.5; }
+    .curation .curation-contents .hero-info h3 {
+      font-size: 21px; }
+    .curation .curation-contents .hero-info h4 {
+      font-size: 35px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #474681; }
+    .curation .curation-contents .hero-info ul {
+      padding-top: 20px;
+      font-size: 16px; }
+      .curation .curation-contents .hero-info ul li:first-child {
+        margin-bottom: 20px; }
+  .curation .curation-contents .curation-list {
+    margin-top: 25px; }
+    .curation .curation-contents .curation-list ul {
+      display: flex;
+      justify-content: space-between; }
+      .curation .curation-contents .curation-list ul a {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      .curation .curation-contents .curation-list ul li {
+        position: relative; }
+      .curation .curation-contents .curation-list ul li .img {
+        width: 170px;
+        height: 244px; }
+        .curation .curation-contents .curation-list ul li .img .bage {
+          left: 10px;
+          top: -20px; }
+        .curation .curation-contents .curation-list ul li .img p {
+          background-image: url("../img/bg-bage-curation-film-m.png");
+          background-repeat: no-repeat; }
+        .curation .curation-contents .curation-list ul li .img img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px; }
+      .curation .curation-contents .curation-list ul li p {
+        margin-top: 15px;
+        font-size: 15px; }
 
 @keyframes moveMouse {
   0% {

@@ -481,6 +481,7 @@ main {
     .curation__title {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 40px;
         h4 {
             @include contents-title;
             color: white;
@@ -492,6 +493,114 @@ main {
             span {
                 background-image: url("../img/ico-more-cross-gray.png");
                 margin-bottom: 3px;
+            }
+        }
+    }
+    .curation-contents {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        color: white;
+        .hero-movie {
+            grid-row-start: span 2;
+            padding-left: 20px;
+        }
+        .hero-info,
+        .curation-list {
+            grid-column-start: span 2;
+        }
+        .bage {
+            position: absolute;
+            left: 0;
+            top: -10px;
+            width: 123px;
+            height: 135px;
+            text-indent: -9999px;
+        }
+    }
+    .curation-contents .hero-movie {
+        position: relative;
+        p {
+            background-image: url("../img/bg-bage-curation-classic.png");
+            background-repeat: no-repeat;
+        }
+        .hero__img {
+            img {
+                width: 88%;
+                border-radius: 20px;
+            }
+        }
+        .btn-util {
+            width: 88%;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            font-size: 20px;
+            a {
+                padding: 15px;
+                background-color: transparent;
+                border: 1px solid white;
+                border-radius: 5px;
+                text-align: center;
+            }
+            .ticketing {
+                @include ticketing-btn;
+                font-size: 20px;
+            }
+        }
+    }
+    .curation-contents .hero-info {
+        line-height: 1.5;
+        h3 {
+            font-size: 21px;
+        }
+        h4 {
+            font-size: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #474681;
+        }
+        ul {
+            padding-top: 20px;
+            font-size: 16px;
+            li:first-child {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .curation-contents .curation-list {
+        margin-top: 25px;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            li {
+                position: relative;
+            }
+            li .img {
+                width: 170px;
+                height: 244px;
+                .bage {
+                    left: 10px;
+                    top: -20px;
+                }
+                p {
+                    background-image: url("../img/bg-bage-curation-film-m.png");
+                    background-repeat: no-repeat;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+            li p {
+                margin-top: 15px;
+                font-size: 15px;
             }
         }
     }
