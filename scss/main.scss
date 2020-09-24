@@ -477,7 +477,7 @@ main {
 .curation {
     background-color: #252451;
     padding-top: 50px;
-    height: 100vh;
+    padding-bottom: 120px;
     .curation__title {
         display: flex;
         justify-content: space-between;
@@ -604,6 +604,119 @@ main {
             }
         }
     }
+}
+
+.megabox-info {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    .info__title {
+        @include contents-title;
+        margin-bottom: 40px;
+    }
+    .info__list ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    .info__list a {
+        display: block;
+        width: 170px;
+        height: 170px;
+        border-radius: 10px;
+        background-position: 0 0;
+        background-size: 170px 340px;
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        &:not(:last-child) {
+            margin-right: 16px;
+        }
+        &:hover {
+            background-position: 0 bottom;
+        }
+    }
+    .bg-dolby {
+        background-image: url("../img/bg-main-megainfo-dolby.png");
+    }
+    .bg-private {
+        background-image: url("../img/bg-main-megainfo-private.png");
+    }
+    .bg-boutique {
+        background-image: url("../img/bg-main-megainfo-boutique.png");
+    }
+    .bg-mx {
+        background-image: url("../img/bg-main-megainfo-mx.png");
+    }
+    .bg-comfort {
+        background-image: url("../img/bg-main-megainfo-comfort.png");
+    }
+    .bg-kids {
+        background-image: url("../img/bg-main-megainfo-kids.png");
+    }
+    .info__notice {
+        height: 60px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-top: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+        font-size: 15px;
+        color: #222;
+        .wrap {
+            height: 100%;
+            display: grid;
+            grid-template-columns: 0.1fr 1fr 0.1fr;
+            align-items: center;
+        }
+        .more {
+            justify-self: end;
+            span {
+                display: inline-block;
+                width: 7px;
+                height: 12px;
+                background-image: url("../img/ico-arr-right-gray.png");
+                background-repeat: no-repeat;
+                margin-left: 10px;
+            }
+        }
+    }
+    .info__notice .link {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        border-right: 1px solid #e2e2e2;
+        border-left: 1px solid #e2e2e2;
+        span {
+            color: #01738b;
+            font-weight: 600;
+        }
+        p:last-child {
+            color: #666;
+        }
+    }
+    .info-link {
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+        .link a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            span {
+                margin-top: 15px;
+                color: #222;
+                font-size: 15px;
+            }
+        }
+    }
+}
+footer {
+    padding: 70px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
