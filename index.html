@@ -27,15 +27,32 @@
                                 <ul>
                                     <li>
                                         <a href="#">영화</a>
-                                        <div class="menu__sub"></div>
+                                        <div class="menu__sub">
+                                            <ul>
+                                                <li>전체영화</li>
+                                                <li>큐레이션</li>
+                                                <li>무비포스트</li>
+                                            </ul>
+                                        </div>
                                     </li>
                                     <li>
                                         <a href="#">예매</a>
-                                        <div class="menu__sub"></div>
+                                        <div class="menu__sub">
+                                            <ul>
+                                                <li>빠른예매</li>
+                                                <li>상영시간표</li>
+                                                <li>더 부티크 프라이빗 예매</li>
+                                            </ul>
+                                        </div>
                                     </li>
                                     <li>
                                         <a href="#">극장</a>
-                                        <div class="menu__sub"></div>
+                                        <div class="menu__sub">
+                                            <ul>
+                                                <li>전체극장</li>
+                                                <li>특별관</li>
+                                            </ul>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -61,15 +78,25 @@
                                 <ul>
                                     <li>
                                         <a href="#">이벤트</a>
-                                        <div class="menu__sub"></div>
+                                        <div class="menu__sub">
+                                            <ul>
+                                                <li>진행중인 이벤트</li>
+                                                <li>지난 이벤트</li>
+                                                <li>당첨자 발표</li>
+                                            </ul>
+                                        </div>
                                     </li>
                                     <li>
                                         <a href="#">스토어</a>
-                                        <div class="menu__sub"></div>
                                     </li>
                                     <li>
                                         <a href="#">혜택</a>
-                                        <div class="menu__sub"></div>
+                                        <div class="menu__sub">
+                                            <ul>
+                                                <li>메가박스 멤버십</li>
+                                                <li>제휴/할인</li>
+                                            </ul>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -164,7 +191,40 @@
                 </div>
             </div>
             <div class="layer-header-search">
-                
+                <div class="wrap">
+                    <div class="rank">
+                        <div class="rank-btn">
+                            <button class="rate-btn on">예매율 순</button>
+                            <button class="audience-btn">메가박스 관객순</button>
+                        </div>
+                        <div class="rank-contents">
+                            <div class="rank__rate visible">
+                                <img src="img/movie-poster/mulan.jpg" alt="뮬란">
+                                <ul>
+                                    <li><span>1</span>뮬란</li>
+                                    <li><span>2</span>테넷</li>
+                                    <li><span>3</span>담보</li>
+                                    <li><span>4</span>오! 문희</li>
+                                    <li><span>5</span>디바</li>
+                                </ul>
+                            </div>
+                            <div class="rank__audience">
+                                <img src="img/movie-poster/tenet.jpg" alt="테넷">
+                                <ul>
+                                    <li><span>1</span>테넷</li>
+                                    <li><span>2</span>다만 악에서 구하소서</li>
+                                    <li><span>3</span>오케이 마담</li>
+                                    <li><span>4</span>오! 문희</li>
+                                    <li><span>5</span>뮬란</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-search">
+                        <input type="text" placeholder="영화를 검색하세요">
+                        <button>검색</button>
+                    </div>
+                </div>
             </div>
         </header>
         <main class="main-container">
@@ -196,7 +256,8 @@
                                             가문을 빛내길 바라는 부모님의 뜻에 따라 본연의 모습을 
                                             억누르고 성장한다.</p>
                                         <div class="review">
-                                            <p>관람평 <span>0</span></p>
+                                            <p>관람평</p>
+                                            <span>0</span>
                                         </div>
                                     </div>
                                 </a>
@@ -552,5 +613,6 @@
     </div>
     <script src="js/imageSlide.js"></script>
     <script src="js/headerBtnClick.js"></script>
+    <script src="js/headerRankBtn.js"></script>
 </body>
 </html>
